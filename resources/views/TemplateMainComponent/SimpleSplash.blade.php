@@ -4,10 +4,15 @@
  * User: Amr Saidam
  * Date: 6/19/2016
  * Time: 3:16 PM
- */?>
+ */ ?>
 <div class="splash">
     <div class="color-line"></div>
-    <div class="splash-title"><h1>Homer - Responsive Admin Theme</h1>
-        <p>Special AngularJS Admin Theme for small and medium webapp with very clean and aesthetic style and feel. </p>
-        <img src="images/loading-bars.svg" width="64" height="64"/></div>
+    <div class="splash-title">
+        <img src="{{URL::asset('bootstraps/images/Tigarty/SplashLogo.png')}}" width="150" height="150"/>
+        <div style="font-size:50px;">تيجارتي</div>
+        <div style="font-size: 20px;">
+            <p>أهلاُ و سهلاً في نظام تيجارتي <br>لادراة افضل </p>
+
+        </div>
+    </div>
 </div>
