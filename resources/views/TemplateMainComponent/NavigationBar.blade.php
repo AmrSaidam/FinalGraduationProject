@@ -45,7 +45,7 @@
                 <ul class="nav nav-second-level">
 
                     <li><a href="{{route('ShowSellingInvoices')}}"> عرض فواتير البيع </a></li>
-                    <li><a href="Show Traders Bills.html"> عرض فواتير المشتريات </a></li>
+                    <li><a href="{{route('ShowTradersInvoices')}}"> عرض فواتير المشتريات </a></li>
 
                 </ul>
             </li>

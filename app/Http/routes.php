@@ -67,3 +67,10 @@ Route::get('/dashboard/ShowSellingInvoices', [
         return view('ShowSellingInvoices');
     }
 ]);
+
+Route::get('/dashboard/ShowTradersInvoices', [
+    'as' => 'ShowTradersInvoices',
+    'uses' => function () {
+        return view('ShowTradersInvoices');
+    }
+]);
