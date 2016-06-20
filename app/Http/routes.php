@@ -11,66 +11,45 @@
 |
 */
 
-Route::get('/', function () {
-    return view('Dashboard');
-});
+Route::get('/', 'AnchorController@Dashboard');
 
 Route::get('/dashboard', [
     'as' => 'dashboard',
-    'uses' => function () {
-        return view('Dashboard');
-    }
-]);
+    'uses' => 'AnchorController@Dashboard']);
 
 Route::get('/dashboard/SalePoint', [
     'as' => 'SalePoint',
-    'uses' => function () {
-        return view('Sales Point');
-    }
+    'uses' => 'AnchorController@SalePoint'
 ]);
 
 Route::get('/dashboard/ShowTraders', [
     'as' => 'ShowTraders',
-    'uses' => function () {
-        return view('ShowTraders');
-    }
+    'uses' => 'AnchorController@ShowTraders'
 ]);
 
 Route::get('/dashboard/ShowProducts', [
     'as' => 'ShowProducts',
-    'uses' => function () {
-        return view('Show Product');
-    }
+    'uses' => 'AnchorController@ShowProducts'
 ]);
 Route::get('/dashboard/SupplierInvoice', [
     'as' => 'SupplierInvoice',
-    'uses' => function () {
-        return view('SupplierInvoice');
-    }
+    'uses' => 'AnchorController@SupplierInvoice'
 ]);
 Route::get('/dashboard/AddUser', [
     'as' => 'AddUser',
-    'uses' => function () {
-        return view('AddUser');
-    }
+    'uses' => 'AnchorController@AddUser'
 ]);
 Route::get('/dashboard/ShowUsers', [
     'as' => 'ShowUsers',
-    'uses' => function () {
-        return view('ShowUsers');
-    }
+    'uses' => 'AnchorController@ShowUsers'
 ]);
 
 Route::get('/dashboard/ShowSellingInvoices', [
     'as' => 'ShowSellingInvoices',
-    'uses' => function () {
-        return view('ShowSellingInvoices');
-    }
+    'uses' => 'AnchorController@ShowSellingInvoices'
 ]);
 
 Route::get('/dashboard/ShowTradersInvoices', [
     'as' => 'ShowTradersInvoices',
-    'uses' => function () {
-        return view('ShowTradersInvoices');
-    }
+    'uses' => 'AnchorController@ShowTradersInvoices'
 ]);
