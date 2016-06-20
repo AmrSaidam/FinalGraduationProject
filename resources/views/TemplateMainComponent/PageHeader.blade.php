@@ -9,8 +9,11 @@
 <div id="header">
     <div class="color-line">
     </div>
-    <div id="logo" class="light-version">
-        <span style="font-size: 20px">
+    <div id="logo" class="light-version" style="text-align: center!important; margin-bottom: 20px !important;">
+
+        <span style="font-size: 20px; color:#62cb31;">
+
+
 تجارتي
         </span>
     </div>

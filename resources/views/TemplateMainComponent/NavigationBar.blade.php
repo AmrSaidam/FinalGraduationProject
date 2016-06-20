@@ -10,7 +10,7 @@
     <div id="navigation">
         <div class="profile-picture">
             <a href="{{route('dashboard')}}">
-                <img src="images/profile.jpg" class="img-circle m-b" alt="logo">
+                    <img src="{{URL::asset('bootstraps/images/Tigarty/minLogo.png')}}" class="img-circle m-b" alt="logo">
             </a>
 
             <div class="stats-label text-color">
