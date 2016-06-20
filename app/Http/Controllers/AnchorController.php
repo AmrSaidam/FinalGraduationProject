@@ -59,4 +59,16 @@ class AnchorController extends Controller
         return view('ShowTraders');
 
     }
+
+    function Login()
+    {
+        return view('WebLogin');
+
+    }
+
+    function RegisterNewAccount()
+    {
+        return view('RegisterNewAccount');
+
+    }
 }

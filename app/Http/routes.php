@@ -53,3 +53,13 @@ Route::get('/dashboard/ShowTradersInvoices', [
     'as' => 'ShowTradersInvoices',
     'uses' => 'AnchorController@ShowTradersInvoices'
 ]);
+
+Route::get('login', [
+    'as' => 'WebLogin',
+    'uses' => 'AnchorController@Login'
+]);
+
+Route::get('RegisterNewAccount', [
+    'as' => 'RegisterNewAccount',
+    'uses' => 'AnchorController@RegisterNewAccount'
+]);
