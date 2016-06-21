@@ -103,14 +103,15 @@
                                 </div>
 
                             </div>
-                            <form>
+                            <form method="post" action="{{route('makeSale')}}" name="SaleForm" id="SaleForm">
+                           <input type="hidden" name="_token" value="{{csrf_token()}}">
                                 <div class="row">
                                     <hr/>
                                 </div>
                                 <div class="row" style=" ">
 
                                     <div dir="rtl">
-                                        <table class="table table-bordered table-striped" dir="rtl">
+                                        <table class="table table-bordered table-striped" name="SaleTable" dir="rtl">
                                             <thead style="text-align: center">
                                             <tr style="font-size:18px;">
                                                 <th style="text-align: center; width: 50px">الرقم</th>
@@ -122,56 +123,56 @@
                                             <tbody>
                                             <tr>
                                                 <td>1</td>
-                                                <td><input id="ProductName" name="TheProductName" type="text"
+                                                <td><input id="ProductName" name="productName[]" type="text"
                                                            placeholder="  اسم المنتج "
                                                            style="width:100%; height: auto;"></td>
-                                                <td><input name="TheProductName" type="text" placeholder=" الكمية  "
+                                                <td><input name="productAmount[]" type="text" placeholder=" الكمية  "
                                                            style="width:100%; height: auto;"></td>
-                                                <td></td>
+                                                <td name="productSum[]"></td>
 
                                             </tr>
                                             <tr>
                                                 <td>2</td>
-                                                <td><input name="TheProductName" type="text" placeholder="اسم المنتج "
+                                                <td><input name="productName[]" type="text" placeholder="اسم المنتج "
                                                            style="width:100%; height: auto;"></td>
-                                                <td><input name="TheProductName" type="text" placeholder=" الكمية  "
+                                                <td><input name="productAmount[]" type="text" placeholder=" الكمية  "
                                                            style="width:100%; height: auto;"></td>
-                                                <td></td>
+                                                <td  name="productSum[]"></td>
 
                                             </tr>
                                             <tr>
                                                 <td>3</td>
-                                                <td><input name="TheProductName" type="text" placeholder="اسم المنتج "
+                                                <td><input name="productName[]" type="text" placeholder="اسم المنتج "
                                                            style="width:100%; height: auto;"></td>
-                                                <td><input name="TheProductName" type="text" placeholder=" الكمية  "
+                                                <td><input name="productAmount[]" type="text" placeholder=" الكمية  "
                                                            style="width:100%; height: auto;"></td>
-                                                <td></td>
+                                                <td name="productSum[]"></td>
 
                                             </tr>
                                             <tr>
                                                 <td>4</td>
-                                                <td><input name="TheProductName" type="text" placeholder="اسم المنتج "
+                                                <td><input name="productName[]" type="text" placeholder="اسم المنتج "
                                                            style="width:100%; height: auto;"></td>
-                                                <td><input name="TheProductName" type="text" placeholder=" الكمية   "
+                                                <td><input name="productAmount[]" type="text" placeholder=" الكمية   "
                                                            style="width:100%; height: auto;"></td>
-                                                <td></td>
+                                                <td name="productSum[]"></td>
 
                                             </tr>
                                             <tr>
                                                 <td>5</td>
-                                                <td><input name="TheProductName" type="text" placeholder="اسم المنتج "
+                                                <td><input name="productName[]" type="text" placeholder="اسم المنتج "
                                                            style="width:100%; height: auto;"></td>
-                                                <td><input name="TheProductName" type="text" placeholder=" الكمية  "
+                                                <td><input name="productAmount[]" type="text" placeholder=" الكمية  "
                                                            style="width:100%; height: auto;"></td>
-                                                <td></td>
+                                                <td name="productSum[]"></td>
 
                                             </tr>
 
                                             </tbody>
                                             <tfoot>
                                             <tr style="font-size:18px;">
-                                                <td colspan="3" style="text-align: center"> السعر الاجمالي</td>
-                                                <td style="text-align: center">500</td>
+                                                <td colspan="3" style="text-align: center" > السعر الاجمالي</td>
+                                                <td style="text-align: center" name="invoiceSum">500</td>
                                             </tr>
                                             </tfoot>
                                         </table>
@@ -332,6 +333,7 @@
 
 <!-- Vendor scripts -->
 @include('TemplateMainComponent.ScriptFooter')
+<script src="{{URL::asset('bootstraps/scripts/SalePointScript.js')}}"></script>
 </body>
 
 <!-- Mirrored from webapplayers.com/homer_admin-v1.7/invoice.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 28 Jul 2015 12:46:25 GMT -->

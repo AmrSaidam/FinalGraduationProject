@@ -41,27 +41,29 @@
                                 <label> اسم المستخدم</label>
                                 <input type="text" value="" id="UserName" class="form-control" name="">
                             </div>
-                            <div class="form-group col-lg-6">
-                                <label> اعادة كلمة المرور :</label>
-                                <input type="password" value="" id="Pass" class="form-control" name="">
-                            </div>
-                            <div class="form-group col-lg-6">
+                            <div class="form-group col-lg-6 col-lg-push-6">
                                 <label>كلمة المرور :</label>
                                 <input type="password" value="" id="" class="form-control" name="">
                             </div>
-                            <div class="form-group col-lg-6">
-                                <label> اعادة الايميل :</label>
-                                <input type="" value="" id="" class="form-control" name="">
+                            <div class="form-group col-lg-6 col-lg-pull-6">
+                                <label> اعادة كلمة المرور :</label>
+                                <input type="password" value="" id="Pass" class="form-control" name="">
                             </div>
-                            <div class="form-group col-lg-6">
+
+                            <div class="form-group col-lg-6 col-lg-push-6">
                                 <label>الايميل : </label>
                                 <input type="" value="" id="Email" class="form-control" name="">
                             </div>
-                            <div class="form-group col-lg-6">
+                            <div class="form-group col-lg-6 col-lg-pull-6">
+                                <label> اعادة الايميل :</label>
+                                <input type="" value="" id="" class="form-control" name="">
+                            </div>
+
+                            <div class="form-group col-lg-6 col-lg-push-6">
                                 <label> العنوان :</label>
                                 <input type="" value="" id="Address" class="form-control" name="">
                             </div>
-                            <div class="form-group col-lg-6">
+                            <div class="form-group col-lg-6 col-lg-pull-6">
                                 <label> رقم الجوال :</label>
                                 <input type="" value="" id="Phone" class="form-control" name="">
                             </div>

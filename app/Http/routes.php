@@ -63,3 +63,8 @@ Route::get('RegisterNewAccount', [
     'as' => 'RegisterNewAccount',
     'uses' => 'AnchorController@RegisterNewAccount'
 ]);
+
+Route::post('makeSale', [
+    'as' => 'makeSale',
+    'uses' => 'SaleController@makeSale'
+]);
