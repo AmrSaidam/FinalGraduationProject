@@ -142,7 +142,7 @@
                     </a>
                 </li>
                 <li class="dropdown">
-                    <a href="{{URL::route('WebLogin')}}">
+                    <a href="{{URL::route('Weblogin')}}">
                         <i class="pe-7s-upload pe-rotate-90"></i>
                     </a>
                 </li>

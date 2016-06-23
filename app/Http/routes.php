@@ -11,60 +11,79 @@
 |
 */
 
-Route::get('/', 'AnchorController@Dashboard');
+Route::group(['middleware'=>['web']], function (){
 
-Route::get('/dashboard', [
-    'as' => 'dashboard',
-    'uses' => 'AnchorController@Dashboard']);
+    Route::get('/', function () {
+        return view('RegisterNewAccount');
+    });
 
-Route::get('/dashboard/SalePoint', [
-    'as' => 'SalePoint',
-    'uses' => 'AnchorController@SalePoint'
-]);
+    Route::post('/signup', [
+        'uses' => 'userController@userSingUp',
+        'as' => 'signup',
+    ]);
 
-Route::get('/dashboard/ShowTraders', [
-    'as' => 'ShowTraders',
-    'uses' => 'AnchorController@ShowTraders'
-]);
+    Route::get('/', 'AnchorController@RegisterNewAccount');
 
-Route::get('/dashboard/ShowProducts', [
-    'as' => 'ShowProducts',
-    'uses' => 'AnchorController@ShowProducts'
-]);
-Route::get('/dashboard/SupplierInvoice', [
-    'as' => 'SupplierInvoice',
-    'uses' => 'AnchorController@SupplierInvoice'
-]);
-Route::get('/dashboard/AddUser', [
-    'as' => 'AddUser',
-    'uses' => 'AnchorController@AddUser'
-]);
-Route::get('/dashboard/ShowUsers', [
-    'as' => 'ShowUsers',
-    'uses' => 'AnchorController@ShowUsers'
-]);
+    Route::get('/dashboard', [
+        'as' => 'dashboard',
+        'uses' => 'AnchorController@Dashboard']);
 
-Route::get('/dashboard/ShowSellingInvoices', [
-    'as' => 'ShowSellingInvoices',
-    'uses' => 'AnchorController@ShowSellingInvoices'
-]);
+    Route::get('/dashboard/SalePoint', [
+        'as' => 'SalePoint',
+        'uses' => 'AnchorController@SalePoint'
+    ]);
 
-Route::get('/dashboard/ShowTradersInvoices', [
-    'as' => 'ShowTradersInvoices',
-    'uses' => 'AnchorController@ShowTradersInvoices'
-]);
+    Route::get('/dashboard/ShowTraders', [
+        'as' => 'ShowTraders',
+        'uses' => 'AnchorController@ShowTraders'
+    ]);
 
-Route::get('login', [
-    'as' => 'WebLogin',
-    'uses' => 'AnchorController@Login'
-]);
+    Route::get('/dashboard/ShowProducts', [
+        'as' => 'ShowProducts',
+        'uses' => 'AnchorController@ShowProducts'
+    ]);
+    Route::get('/dashboard/SupplierInvoice', [
+        'as' => 'SupplierInvoice',
+        'uses' => 'AnchorController@SupplierInvoice'
+    ]);
+    Route::get('/dashboard/AddUser', [
+        'as' => 'AddUser',
+        'uses' => 'AnchorController@AddUser'
+    ]);
+    Route::get('/dashboard/ShowUsers', [
+        'as' => 'ShowUsers',
+        'uses' => 'AnchorController@ShowUsers'
+    ]);
 
-Route::get('RegisterNewAccount', [
-    'as' => 'RegisterNewAccount',
-    'uses' => 'AnchorController@RegisterNewAccount'
-]);
+    Route::get('/dashboard/ShowSellingInvoices', [
+        'as' => 'ShowSellingInvoices',
+        'uses' => 'AnchorController@ShowSellingInvoices'
+    ]);
 
-Route::post('makeSale', [
-    'as' => 'makeSale',
-    'uses' => 'SaleController@makeSale'
-]);
+    Route::get('/dashboard/ShowTradersInvoices', [
+        'as' => 'ShowTradersInvoices',
+        'uses' => 'AnchorController@ShowTradersInvoices'
+    ]);
+
+    Route::get('login', [
+        'as' => 'Weblogin',
+        'uses' => 'AnchorController@Login'
+    ]);
+
+    Route::get('/RegisterNewAccount', [
+        'as' => 'RegisterNewAccount',
+        'uses' => 'AnchorController@RegisterNewAccount'
+    ]);
+
+    Route::post('makeSale', [
+        'as' => 'makeSale',
+        'uses' => 'SaleController@makeSale'
+    ]);
+
+    Route::get('/try', [
+        'as' => 'try',
+        'uses' => 'AnchorController@tryy'
+    ]);
+
+});
+

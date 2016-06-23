@@ -3,9 +3,7 @@
 
 <!-- Mirrored from webapplayers.com/homer_admin-v1.7/register.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 28 Jul 2015 12:46:33 GMT -->
 <head>
-
     @include('TemplateMainComponent.IncodingHeader')
-
             <!-- Page title -->
     <title>HOMER | WebApp admin theme</title>
 
@@ -25,47 +23,54 @@
 <!--[endif]-->
 
 <div class="color-line"></div>
-
+@if (count($errors) > 0)
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 <div class="register-container" dir="rtl">
     <div class="row">
         <div class="col-md-12">
             <div class="text-center m-b-md">
                 <h2><i class="pe-7s-users"></i> تسجيل عضوية </h2>
-
             </div>
             <div class="hpanel">
                 <div class="panel-body">
-                    <form action="#" id="loginForm">
+                    <form action="{{ route('signup') }}" method="post" id="loginForm">
                         <div class="row">
                             <div class="form-group col-lg-12">
                                 <label> اسم المستخدم</label>
-                                <input type="text" value="" id="UserName" class="form-control" name="">
+                                <input type="text" id="name" class="form-control" name="name" value="{{ Request::old('name') }}">
                             </div>
                             <div class="form-group col-lg-6 col-lg-push-6">
                                 <label>كلمة المرور :</label>
-                                <input type="password" value="" id="" class="form-control" name="">
+                                <input type="password" id="password" class="form-control" name="password">
                             </div>
                             <div class="form-group col-lg-6 col-lg-pull-6">
                                 <label> اعادة كلمة المرور :</label>
-                                <input type="password" value="" id="Pass" class="form-control" name="">
+                                <input type="password" id="repassword" class="form-control" name="repassword">
                             </div>
 
                             <div class="form-group col-lg-6 col-lg-push-6">
                                 <label>الايميل : </label>
-                                <input type="" value="" id="Email" class="form-control" name="">
+                                <input type="text" id="Email" class="form-control" name="Email" value="">
                             </div>
                             <div class="form-group col-lg-6 col-lg-pull-6">
                                 <label> اعادة الايميل :</label>
-                                <input type="" value="" id="" class="form-control" name="">
+                                <input type="text" id="reemail" class="form-control" name="reemail">
                             </div>
 
                             <div class="form-group col-lg-6 col-lg-push-6">
                                 <label> العنوان :</label>
-                                <input type="" value="" id="Address" class="form-control" name="">
+                                <input type="text" id="Address" class="form-control" name="Address">
                             </div>
                             <div class="form-group col-lg-6 col-lg-pull-6">
                                 <label> رقم الجوال :</label>
-                                <input type="" value="" id="Phone" class="form-control" name="">
+                                <input type="text" id="Mobile" class="form-control" name="Mobile">
                             </div>
                             <!--<div class="checkbox col-lg-12">
                                 <input type="checkbox" class="i-checks" checked>
@@ -73,10 +78,8 @@
                             </div>
                             -->
                         </div>
-                        <div class="text-center">
-                            <button class="btn btn-success">تسجيل</button>
-                            <button class="btn btn-default">الغاء</button>
-                        </div>
+                            <button type="submit" class="btn btn-success">تسجيل</button>
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     </form>
                 </div>
             </div>

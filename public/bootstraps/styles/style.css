@@ -2402,7 +2402,6 @@ a:focus {
 .popover,
 .progress,
 .progress-bar {
-  box-shadow: none;
 }
 .vertical-mid {
   display: table;
