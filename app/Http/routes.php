@@ -17,11 +17,6 @@ Route::group(['middleware'=>['web']], function (){
         return view('RegisterNewAccount');
     });
 
-    Route::post('/signup', [
-        'uses' => 'userController@userSingUp',
-        'as' => 'signup',
-    ]);
-
     Route::get('/', 'AnchorController@RegisterNewAccount');
 
     Route::get('/dashboard', [
@@ -86,4 +81,9 @@ Route::group(['middleware'=>['web']], function (){
     ]);
 
 });
+
+Route::post('/signup', [
+    'uses' => 'userController@userSingUp',
+    'as' => 'signup',
+]);
 
