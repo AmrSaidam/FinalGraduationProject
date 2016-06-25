@@ -25,7 +25,8 @@ class userController extends BaseController
             'repassword' => 'required|same:password',
             'Email' => 'required|email|unique:employee',
             'reemail' => 'required|same:Email',
-            'Mobile' => 'required|min:7|unique:employee'
+            'Address' => 'required|max:100',
+            'Mobile' => 'required|min:7|unique:employee|integer'
         ]);
 
         if($validate->fails()){

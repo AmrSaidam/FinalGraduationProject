@@ -11,7 +11,7 @@
 |
 */
 
-Route::group(['middlewareGroups'=> ['web']], function (){
+Route::group(['middleware'=> ['web']], function (){
 
 //    Route::get('/', function () {
 //
@@ -29,6 +29,11 @@ Route::group(['middlewareGroups'=> ['web']], function (){
         'as' => 'dashboard',
         'uses' => 'AnchorController@Dashboard']);
 
+
+    Route::get('/dashboard/SalePoint', [
+        'as' => 'SalePoint',
+        'uses' => 'AnchorController@SalePoint'
+    ]);
 
 //    Route::get('/dashboard/SalePoint{error}', [
 //        'as' => 'SalePoint',
@@ -88,8 +93,3 @@ Route::group(['middlewareGroups'=> ['web']], function (){
     ]);
 
 });
-
-Route::get('/dashboard/SalePoint', [
-    'as' => 'SalePoint',
-    'uses' => 'AnchorController@SalePoint'
-]);

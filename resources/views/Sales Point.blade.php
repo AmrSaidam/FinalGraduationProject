@@ -132,46 +132,46 @@
                                             <tbody>
                                             <tr>
                                                 <td>1</td>
-                                                <td><input id="ProductName" name="productName[]" type="text"
+                                                <td><input id="productName" id="ProductName" name="productName[]" type="text"
                                                            placeholder="  اسم المنتج "
-                                                           style="width:100%; height: auto;"></td>
-                                                <td><input name="productAmount[]" type="text" placeholder=" الكمية  "
+                                                           style="width:100%; height: auto;" ></td>
+                                                <td><input id="productAmount" name="productAmount[]" type="text" placeholder=" الكمية  "
                                                            style="width:100%; height: auto;"></td>
                                                 <td name="productSum[]"></td>
 
                                             </tr>
                                             <tr>
                                                 <td>2</td>
-                                                <td><input name="productName[]" type="text" placeholder="اسم المنتج "
+                                                <td><input id="productName" name="productName[]" type="text" placeholder="اسم المنتج "
                                                            style="width:100%; height: auto;"></td>
-                                                <td><input name="productAmount[]" type="text" placeholder=" الكمية  "
+                                                <td><input id="productAmount" name="productAmount[]" type="text" placeholder=" الكمية  "
                                                            style="width:100%; height: auto;"></td>
                                                 <td  name="productSum[]"></td>
 
                                             </tr>
                                             <tr>
                                                 <td>3</td>
-                                                <td><input name="productName[]" type="text" placeholder="اسم المنتج "
+                                                <td><input id="productName" name="productName[]" type="text" placeholder="اسم المنتج "
                                                            style="width:100%; height: auto;"></td>
-                                                <td><input name="productAmount[]" type="text" placeholder=" الكمية  "
+                                                <td><input id="productAmount" name="productAmount[]" type="text" placeholder=" الكمية  "
                                                            style="width:100%; height: auto;"></td>
                                                 <td name="productSum[]"></td>
 
                                             </tr>
                                             <tr>
                                                 <td>4</td>
-                                                <td><input name="productName[]" type="text" placeholder="اسم المنتج "
+                                                <td><input id="productName" name="productName[]" type="text" placeholder="اسم المنتج "
                                                            style="width:100%; height: auto;"></td>
-                                                <td><input name="productAmount[]" type="text" placeholder=" الكمية   "
+                                                <td><input id="productAmount" name="productAmount[]" type="text" placeholder=" الكمية   "
                                                            style="width:100%; height: auto;"></td>
                                                 <td name="productSum[]"></td>
 
                                             </tr>
                                             <tr>
                                                 <td>5</td>
-                                                <td><input name="productName[]" type="text" placeholder="اسم المنتج "
+                                                <td><input id="productName" name="productName[]" type="text" placeholder="اسم المنتج "
                                                            style="width:100%; height: auto;"></td>
-                                                <td><input name="productAmount[]" type="text" placeholder=" الكمية  "
+                                                <td><input id="productAmount" name="productAmount[]" type="text" placeholder=" الكمية  "
                                                            style="width:100%; height: auto;"></td>
                                                 <td name="productSum[]"></td>
 
