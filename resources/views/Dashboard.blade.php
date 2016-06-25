@@ -36,6 +36,7 @@
         <!-- Navigation -->
 @include('TemplateMainComponent.NavigationBar')
         <!-- Main Wrapper -->
+
 <div id="wrapper">
 
     <div class="content animate-panel">

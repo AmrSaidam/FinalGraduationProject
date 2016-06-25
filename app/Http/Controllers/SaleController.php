@@ -5,57 +5,63 @@ namespace App\Http\Controllers;
 use App\Product;
 use Illuminate\Http\Request;
 use App\Http\Requests;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+
+use Illuminate\Session;
 
 class SaleController extends Controller
 {
     function makeSale(Request $request)
     {
+
+
+        $request->session()->flash('quantityError' ,'لاتوجد كمية كافية في المتجر ');
+
         $product = array();
         $product = [
             'productName' => $request->input('productName'),
             'productAmount' => $request->input('productAmount'),
             'productTotal' => $request->input('productSum')
         ];
-        echo $this->saveSaleInvoiceProduct($product);
+//        \Illuminate\Support\Facades\Session::put('quantityError' ,['لاتوجد كمية كافية في المتجر ']);
+      return redirect('/dashboard/SalePoint')->with('quantityError' ,'لاتوجد كمية كافية في المتجر ');
+
+      //$this->saveSaleInvoiceProduct($product , $request);
+
 
 
     }
 
-    private function saveSaleInvoiceProduct($productArray)
+    private function saveSaleInvoiceProduct($productArray ,$request)
     {
+
         $arraySize = count($productArray);
         for ($counter = 0; $counter < $arraySize; $counter++) {
             if ($productArray['productName'][$counter] != "") {
                 $Product = Product::where('Name', $productArray['productName'][$counter])->get();
-                echo $numberOfAmount = @$Product[0]['SingleUnitAmount'];
-                echo '\n Number of Unit in Cartoon ' . @$Product[0]['numberOfUnitInCartoon'] . '\n ';
-                $singleAmount = $numberOfAmount - $productArray['productAmount'][$counter];
-                echo 'all number' . $allProductUnits = @$Product[0]['numberOfUnitInCartoon'] * @$Product[0]['WholeQuantity'];
-                echo '<br>' . $numberOfUnitsAfterDiscarding = $allProductUnits - $productArray['productAmount'][$counter];
-                $numberOfCartoonAfterDiscarding = $numberOfUnitsAfterDiscarding / @$Product[0]['numberOfUnitInCartoon'];
 
-                if ($numberOfCartoonAfterDiscarding > @$Product[0]['numberOfUnitInCartoon']) {
-                    $singleUnitAmount = $numberOfCartoonAfterDiscarding - @$Product[0]['numberOfUnitInCartoon'];
-                    $numberWithFraction = $singleUnitAmount;
-                    echo'<br>singleUnitAmount is '.ceil($singleUnitAmount);
-                    echo '<br> fraction is '.($numberWithFraction - ceil($singleUnitAmount));
-                    echo'<br>wholeQuantity is '.ceil($numberOfCartoonAfterDiscarding);
+                $allProductUnits = @$Product[0]['numberOfUnitInCartoon'] * @$Product[0]['WholeQuantity'];
+                if($productArray['productAmount'][$counter] > $allProductUnits)
+                {
+
+                    echo 'Amr';
+
+//                   return Redirect::to('/dashboard/SalePoint')
+//                        ->header('Cache-Control', 'no-store, no-cache, must-revalidate');
+
+
+                     return redirect('dashboard');//;->back()->with('quantityError' ,['لاتوجد كمية كافية في المتجر ']);
 
                 }
-//                if ($productArray['productAmount'][$counter] > @$Product[0]['numberOfUnitInCartoon'] ||
-//                    $productArray['productAmount'][$counter] < @$Product[0]['SingleUnitAmount']) {
-//                    $allProductSaleAmount = $productArray['productAmount'][$counter];
-//                } else {
-//                    $allProductSaleAmount = $numberOfAmount + $productArray['productAmount'][$counter];
-//                }
-//
-//                echo 'productName ' . $productArray['productName'][$counter];
-//                echo $this->checkCartoons($Product, $allProductSaleAmount, $singleAmount) . '\n';
+                $numberOfUnitsAfterDiscarding = $allProductUnits - $productArray['productAmount'][$counter];
+                $numberOfCartoonAfterDiscarding = $numberOfUnitsAfterDiscarding / @$Product[0]['numberOfUnitInCartoon'];
+
+                DB::table('products')->where('Product_ID', @$Product[0]['Product_ID'])->update(array('WholeQuantity' => $numberOfCartoonAfterDiscarding,
+                    'SingleUnitAmount' => $numberOfUnitsAfterDiscarding));
             }
         }
 
-        return 'Done';
     }
 
     private function checkCartoons($product, $productAmount, $singleAmount)

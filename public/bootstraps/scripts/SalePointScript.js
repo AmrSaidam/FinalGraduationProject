@@ -25,3 +25,7 @@
 //    });
 //
 //});
+$('#productAmount[]').click(function()
+{
+    alert('HelloAmr');
+});

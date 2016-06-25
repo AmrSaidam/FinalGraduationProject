@@ -58,6 +58,15 @@
 @include('TemplateMainComponent.NavigationBar')
 
         <!-- Main Wrapper -->
+@if(session()->has('quantityError'))
+
+    {{--{{$quantityError}}--}}
+    <p>dlllllllllllllllllllllllllllllllllll</p>
+    {{session('quantityError')}}
+    {!! var_dump( session('quantityError')) !!}
+
+@endif
+
 <div id="wrapper">
 
     <div class="normalheader transition animated fadeIn" dir="rtl">

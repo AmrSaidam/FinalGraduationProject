@@ -8,9 +8,9 @@ use App\Http\Requests;
 
 class AnchorController extends Controller
 {
-    function Dashboard()
+    function RegisterNewAccount()
     {
-        return view('Dashboard');
+        return view('RegisterNewAccount');
     }
 
     function SalePoint()
@@ -66,9 +66,19 @@ class AnchorController extends Controller
 
     }
 
-    function RegisterNewAccount()
+    function Dashboard()
     {
-        return view('RegisterNewAccount');
+        return view('Dashboard');
 
     }
+    function tryy(){
+        return view('try');
+    }
+
+    function SalePointWithError($error)
+    {
+        return view('Sales Point',compact('error',$error));
+
+    }
+
 }
