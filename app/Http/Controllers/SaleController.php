@@ -16,6 +16,7 @@ class SaleController extends Controller
     {
 
 
+
         $request->session()->flash('quantityError' ,'لاتوجد كمية كافية في المتجر ');
 
         $product = array();
@@ -25,6 +26,7 @@ class SaleController extends Controller
             'productTotal' => $request->input('productSum')
         ];
 //        \Illuminate\Support\Facades\Session::put('quantityError' ,['لاتوجد كمية كافية في المتجر ']);
+       
       return redirect('/dashboard/SalePoint')->with('quantityError' ,'لاتوجد كمية كافية في المتجر ');
 
       //$this->saveSaleInvoiceProduct($product , $request);
